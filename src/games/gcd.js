@@ -1,22 +1,15 @@
-import gameEngine from '../gameEngine.js';
-import { getRandomNumber } from '../utils.js';
-
-const rule = 'Find the greatest common divisor of given numbers.';
-
-const answerGcd = (a, b) => {
-  if (!b) {
-    return a;
-  }
-
-  return answerGcd(b, a % b);
-};
-
-const getQuestionAndAnswer = () => {
-  const question = [getRandomNumber(0, 100), getRandomNumber(0, 100)];
-  const answer = answerGcd(...question).toString();
-  return [question.join(' '), answer];
-};
+import gameLogic from '../index.js';
 
 export default () => {
-  gameEngine(rule, getQuestionAndAnswer);
+  const rules = 'Find the greatest common divisor of given numbers.';
+  const rulesFunction = () => {
+    const number = Math.floor(Math.random() * 100);
+    const number2 = Math.floor(Math.random() * 100);
+    const gcd = (x, y) => (!y ? x : gcd(y, x % y));
+    const question = `${number} ${number2}`;
+    const answer = `${gcd(number, number2)}`;
+    return [question, answer];
+  };
+
+  gameLogic(rules, rulesFunction);
 };

@@ -1,4 +1,4 @@
-#! /usr/bin/env node
-import runEven from '../src/games/even.js';
+#!/usr/bin/env node
+import answerEventOrNo from '../src/games/evenOrNo.js';
 
-runEven();
+answerEventOrNo();
