@@ -11,15 +11,18 @@ let hideOfProgressionNumber;
 let stepForProgression;
 // Функция приветствия юзера
 const greetings = () => {
-  userName = readlineSync.question('Welcome to the Brain Games! \nMay I have your name? ');
-  console.log(`${'Hello,'} ${userName}${'!'}`);
-};
+	if (process.env.NODE_ENV !== 'test') {
+		 userName = readlineSync.question('Welcome to the Brain Games! \nMay I have your name? ');
+		 console.log(`${'Hello,'} ${userName}${'!'}`);
+	}
+ };
 
 // Функкция определения имени юзера
 const getUsersName = () => userName;
 
 // Функция описания правил игры
 const rulesOfGame = (nameGame) => {
+	if (process.env.NODE_ENV !== 'test') {
   switch (nameGame) {
     case 'brain-calc':
       console.log('What is the result of the expression?');
@@ -40,6 +43,7 @@ const rulesOfGame = (nameGame) => {
       console.log('Sorry, something wrong');
       break;
   }
+ }
 };
 
 // Функция вывода рандомного числа
