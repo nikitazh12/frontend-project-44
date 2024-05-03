@@ -77,32 +77,32 @@ const progression = () => {
 // Функция, задающая вопрос юзеру
 
 const question = (nameGame) => {
-  firstRandomNumber = getRandom(2, 100);
-  secondRandomNumber = getRandom(1, 100);
-  sign = getRandomMathSign();
-  let questionResult;
-  switch (nameGame) {
-    case 'brain-calc':
-      questionResult = console.log(`${'Question:'} ${firstRandomNumber} ${sign} ${secondRandomNumber}`);
-      break;
-    case 'brain-even':
-      questionResult = console.log(`${'Question:'} ${firstRandomNumber}`);
-      break;
-    case 'brain-gcd':
-      questionResult = console.log(`${'Question:'} ${firstRandomNumber} ${secondRandomNumber}`);
-      break;
-    case 'brain-progression':
-      questionResult = console.log(`${'Question:'} ${progression(firstRandomNumber, stepForProgression)}`);
-      break;
-    case 'brain-prime':
-      questionResult = console.log(`${'Question:'} ${firstRandomNumber}`);
-      break;
-    default:
-      console.log('Sorry, something wrong');
-      break;
-  }
-  return questionResult;
-};
+	firstRandomNumber = getRandom(2, 100);
+	secondRandomNumber = getRandom(1, 100);
+	sign = getRandomMathSign();
+	let questionResult;
+	switch (nameGame) {
+		 case 'brain-calc':
+			 questionResult = `Question: ${firstRandomNumber} ${sign} ${secondRandomNumber}`;
+			 break;
+		 case 'brain-even':
+			 questionResult = `Question: ${firstRandomNumber}`;
+			 break;
+		 case 'brain-gcd':
+			 questionResult = `Question: ${firstRandomNumber} ${secondRandomNumber}`;
+			 break;
+		 case 'brain-progression':
+			 questionResult = `Question: ${progression(firstRandomNumber, stepForProgression)}`;
+			 break;
+		 case 'brain-prime':
+			 questionResult = `Question: ${firstRandomNumber}`;
+			 break;
+		 default:
+			 console.log('Sorry, something wrong');
+			 break;
+	}
+	return questionResult;
+ };
 
 // Функция получения ответа от пользователя
 const getUsersAnswer = () => readlineSync.question('Your answer: ');
@@ -192,18 +192,19 @@ const compareOfAnswer = (nameGame) => {
 
 // Функция запуска игры со счетчиком 
 const runGameWithCounter = (nameGame) => {
-  greetings();
-  rulesOfGame(nameGame);
-  const count = 3;
-  let i = 0;
-  while (i < count && isGameOver !== 'true') {
-    question(nameGame);
-    correctAnswer(nameGame);
-    compareOfAnswer(nameGame);
-    i += 1;
-  }
-  if (i === 3 && isGameOver !== 'true') {
-    console.log(`${'Congratulations,'} ${getUsersName()}!`);
-  }
-};
+	greetings();
+	rulesOfGame(nameGame);
+	const count = 3;
+	let i = 0;
+	while (i < count && isGameOver !== 'true') {
+		 const questionText = question(nameGame);
+		 console.log(questionText); // Выводим вопрос
+		 correctAnswer(nameGame);
+		 compareOfAnswer(nameGame);
+		 i += 1;
+	}
+	if (i === 3 && isGameOver !== 'true') {
+		 console.log(`${'Congratulations,'} ${getUsersName()}!`);
+	}
+ };
 export default runGameWithCounter;
