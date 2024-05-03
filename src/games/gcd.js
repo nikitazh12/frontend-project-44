@@ -1,4 +1,4 @@
-import { generateRandom } from '../utils.js';
+import generateRandom from '../utils.js';
 import playGame from '../index.js';
 
 function firstGcd(num1, num2) {
