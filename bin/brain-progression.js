@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import runGameWithCounter from '../src/index.js';
+import progression from '../src/games/progression.js';
 
-runGameWithCounter('brain-progression');
+progression();
