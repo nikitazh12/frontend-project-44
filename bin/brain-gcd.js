@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import calcGcd from '../src/games/gcd.js';
+import runGameWithCounter from '../src/index.js';
 
-calcGcd();
+runGameWithCounter('brain-prime');

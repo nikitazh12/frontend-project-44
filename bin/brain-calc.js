@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import calcSum from '../src/games/calc.js';
+import runGameWithCounter from '../src/index.js';
 
-calcSum();
+runGameWithCounter('brain-calc');
