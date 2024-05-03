@@ -13,7 +13,7 @@
     "brain-prime": "bin/brain-prime.js"
   },
   "scripts": {
-		"test": "NODE_ENV=test rspec ./spec/40_brain_gcd_spec.rb"
+		"test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "nikitazh12",
   "license": "ISC",
